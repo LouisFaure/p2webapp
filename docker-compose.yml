@@ -1,0 +1,17 @@
+version: '2'
+services:
+  web:
+    # Path to dockerfile.
+    build: .
+    image: louisfaure/pagoda2webapp:latest
+    # Mapping of container port to host    
+    ports:
+      - "8081:80"
+
+    # environment:
+      # URL: https://...
+    
+    # Limit cpu and memory
+    mem_limit: 100m
+    mem_reservation: 40M
+    cpus: '0.5'
