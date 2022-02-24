@@ -1,17 +1,18 @@
-version: '2'
+version: '2.2'
 services:
   web:
     # Path to dockerfile.
     build: .
     image: louisfaure/pagoda2webapp:latest
+    entrypoint: /config.sh
     # Mapping of container port to host    
     ports:
-      - "8081:80"
+      - "8082:80"
 
-    # environment:
-      # URL: https://...
+    #environment:
+    #  URL: https://adameykolab.srv.meduniwien.ac.at/~lfaure/SGN/p2w.bin
     
     # Limit cpu and memory
     mem_limit: 100m
     mem_reservation: 40M
-    cpus: '0.5'
+    cpus: 0.5
