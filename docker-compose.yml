@@ -1,18 +1,32 @@
 version: '2.2'
 services:
-  web:
+  local:
     # Path to dockerfile.
     build: .
     image: louisfaure/pagoda2webapp:latest
     entrypoint: /config.sh
-    # Mapping of container port to host    
+    # Mapping of container port to host
     ports:
-      - "8082:80"
+      - "8081:80"
+    container_name: pagoda2
 
-    #environment:
-    #  URL: https://adameykolab.srv.meduniwien.ac.at/~lfaure/SGN/p2w.bin
-    
     # Limit cpu and memory
     mem_limit: 100m
     mem_reservation: 40M
     cpus: 0.5
+  # newpagoda:
+    # Path to dockerfile.
+    # build: .
+    # image: louisfaure/pagoda2webapp:latest
+    # entrypoint: /config.sh
+    # Mapping of container port to host    
+    # ports:
+      # - "8082:80"
+    # container_name: pagoda2_new
+    # environment: # set up url for single remote pagoda2 web app
+      # URL: https://...
+    
+    # Limit cpu and memory
+    # mem_limit: 100m
+    # mem_reservation: 40M
+    # cpus: 0.5
